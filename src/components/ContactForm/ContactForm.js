@@ -4,7 +4,7 @@ import React from 'react';
 import { ButAdd, StyledForm, StyledInput } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import Notiflix from 'notiflix';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/phonebook/operations';
 
 const phoneRegex = RegExp(/^\(?([0-9]{3})[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
 
