@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { changeFilter, resetFilter } from 'redux/phonebook/filterSlice';
+import { changeFilter, resetFilter } from 'redux/filterSlice';
 
 export const Filter = () => {
   const filters = useSelector(state => state.filter);

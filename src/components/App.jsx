@@ -2,9 +2,9 @@ import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
 import { ContactForm } from './ContactForm/ContactForm';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectError, selectIsLoading } from 'redux/phonebook/selectors';
+import { selectError, selectIsLoading } from 'redux/selectors';
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/phonebook/operations';
+import { fetchContacts } from 'redux/operations';
 
 export const App = () => {
   const dispatch = useDispatch();
