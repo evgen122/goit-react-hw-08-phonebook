@@ -48,7 +48,6 @@ export const ContactForm = () => {
       }}
       validationSchema={formShema}
       onSubmit={(values, actions) => {
-        // console.log('sffhsfhgsttgst', values);
         dispatch(() => examinationAdd(values, contacts));
         actions.resetForm();
       }}

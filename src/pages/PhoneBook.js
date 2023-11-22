@@ -1,11 +1,10 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/phonebook/operations';
 import { selectError, selectIsLoading } from 'redux/phonebook/selectors';
-// import { selectError, selectIsLoading } from 'redux/selectors';
 
 export default function PhoneBook() {
   const dispatch = useDispatch();

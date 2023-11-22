@@ -1,7 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { ButtonDelete } from './ItemContact.stuled';
 import { deleteContact } from 'redux/phonebook/operations';
-// import { deleteContact } from 'redux/operations';
 
 export const ItemContact = ({ item: { id, name, number } }) => {
   const dispatch = useDispatch();

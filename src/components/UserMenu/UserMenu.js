@@ -1,4 +1,3 @@
-// import { logOut } from 'redux/auth/selectors';
 import { useDispatch } from 'react-redux';
 import { useAuth } from 'hooks/useAuth';
 import css from './UserMenu.module.css';

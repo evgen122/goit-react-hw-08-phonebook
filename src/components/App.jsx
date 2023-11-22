@@ -1,6 +1,5 @@
 import { useDispatch } from 'react-redux';
 import { lazy, useEffect } from 'react';
-// import { fetchContacts } from 'redux/operations';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
 import { RestrictedRoute } from './RestrictedRoute';
@@ -17,10 +16,6 @@ const PhoneBookPage = lazy(() => import('pages/PhoneBook'));
 export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
-
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
 
   useEffect(() => {
     dispatch(refreshUser());
