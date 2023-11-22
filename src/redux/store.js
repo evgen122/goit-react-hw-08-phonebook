@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { contactsReducer } from './contactsSlice';
-import { filterReducer } from './filterSlice';
-import persistReducer from 'redux-persist/es/persistReducer';
+// import { contactsReducer } from 'redux/phonebook/';
+// import { filterReducer } from './filterSlice';
+// import persistReducer from 'redux-persist/es/persistReducer';
 import { authReducer } from './auth/slise';
 import {
   FLUSH,
@@ -10,8 +10,12 @@ import {
   PURGE,
   REGISTER,
   REHYDRATE,
+  persistReducer,
+  persistStore,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { contactsReducer } from './phonebook/contactsSlice';
+import { filterReducer } from './phonebook/filterSlice';
 
 // Persisting token field from auth slice to localstorage
 const authPersistConfig = {
@@ -34,3 +38,5 @@ export const store = configureStore({
     }),
   devTools: process.env.NODE_ENV === 'development',
 });
+
+export const persistor = persistStore(store);

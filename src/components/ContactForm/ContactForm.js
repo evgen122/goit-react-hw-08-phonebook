@@ -4,16 +4,16 @@ import React from 'react';
 import { ButAdd, StyledForm, StyledInput } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import Notiflix from 'notiflix';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/phonebook/operations';
 
-const phoneRegex = RegExp(/^\(?([0-9]{3})[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
+const phoneRegex = RegExp(/^\(?([0-9]{3})[-. ]?([0-9]{2})[-. ]?([0-9]{2})$/);
 
 const formShema = Yup.object().shape({
   name: Yup.string()
     .min(3, 'Too short!')
     .max(50, 'Too Long!')
     .required('This field is required!'),
-  phone: Yup.string()
+  number: Yup.string()
     .matches(phoneRegex, 'Invalid phone')
     .required('Phone is required'),
 });
@@ -44,10 +44,11 @@ export const ContactForm = () => {
     <Formik
       initialValues={{
         name: '',
-        phone: '',
+        number: '',
       }}
       validationSchema={formShema}
       onSubmit={(values, actions) => {
+        // console.log('sffhsfhgsttgst', values);
         dispatch(() => examinationAdd(values, contacts));
         actions.resetForm();
       }}
@@ -57,9 +58,9 @@ export const ContactForm = () => {
         <StyledInput id="name" name="name" />
         <ErrorMessage name="name" />
 
-        <label htmlFor="phone">Number</label>
-        <StyledInput id="phone" name="phone" placeholder="111-111-1111" />
-        <ErrorMessage name="phone" />
+        <label htmlFor="number">Number</label>
+        <StyledInput id="number" name="number" placeholder="111-11-11" />
+        <ErrorMessage name="number" />
 
         <ButAdd type="submit">Add contact</ButAdd>
       </StyledForm>
